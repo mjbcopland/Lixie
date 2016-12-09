@@ -14,9 +14,8 @@
 
 class Lixie
 {
-  public:
-    Lixie();
-    void begin();
+public:
+	void begin();
 	void clear();
 
 	void write_int(float input);
@@ -29,17 +28,11 @@ class Lixie
 	void show();
 	void print_binary();
 	
-	void color_on_rgb(byte r, byte g, byte b);
-	void color_on_hsv(byte h, byte s, byte v);
-	
-	void color_on_rgb(byte r, byte g, byte b, byte index);
-	void color_on_hsv(byte h, byte s, byte v, byte index);
-	
-	void color_off_rgb(byte r, byte g, byte b);
-	void color_off_hsv(byte h, byte s, byte v);
-	
-	void color_off_rgb(byte r, byte g, byte b, byte index);
-	void color_off_hsv(byte h, byte s, byte v, byte index);
+	void color_on(const CRGB &color);
+	void color_on(const CRGB &color, size_t index);
+
+	void color_off(const CRGB &color);
+	void color_off(const CRGB &color, size_t index);
 };
 
 #endif

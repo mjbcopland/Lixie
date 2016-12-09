@@ -6,7 +6,7 @@ byte hue = 0;       // This is the HSV hue of the digits, and shifts a bit every
 
 void setup() {
   lix.begin();                   // Initialize LEDs
-  lix.color_on_hsv(hue,255,255); // Set initial HSV color (RED)
+  lix.color_on(CHSV(hue,255,255)); // Set initial HSV color (RED)
 }
 
 void loop() {
@@ -15,7 +15,7 @@ void loop() {
 
   if(count % 10 == 0){              // If we've incremented ten times
     hue+=32;                        // Push hue 1/8th through the color wheel
-    lix.color_on_hsv(hue,255,255);  // Set new color
+    lix.color_on(CHSV(hue,255,255));  // Set new color
   }
   
   delay(100);
