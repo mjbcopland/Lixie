@@ -4,17 +4,26 @@
   Released under the GPLv3 license.
 */
 
-#ifndef lixie_h
-#define lixie_h
+#pragma once
 
-#include "Arduino.h"
-#include "FastLED.h"
+#include <Print.h>
+#include <FastLED.h>
 
-#define write_string(input) write_string_f(input, sizeof(input)-1);
+class Lixie : public Print {
+private:
+	constexpr size_t  NUM_DIGITS;
+	constexpr uint8_t DATA_PIN;
 
-class Lixie
-{
+	int8_t buffer[NUM_DIGITS];
+
+	CRGBArray<NUM_DIGITS*LEDS_PER_DIGIT> leds;
+
+	static constexpr uint8_t LEDS_PER_DIGIT = 20;
+	static constexpr uint8_t addresses[10] = {3, 4, 2, 0, 8, 6, 5, 7, 9, 1};
+
 public:
+	Lixie(uint8_t, uint8_t);
+
 	void begin();
 	void clear();
 
@@ -28,11 +37,6 @@ public:
 	void show();
 	void print_binary();
 	
-	void color_on(const CRGB &color);
-	void color_on(const CRGB &color, size_t index);
-
-	void color_off(const CRGB &color);
-	void color_off(const CRGB &color, size_t index);
+	CRGBArray<numDigits> foreground;
+	CRGBArray<numDigits> background;
 };
-
-#endif

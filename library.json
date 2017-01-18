@@ -2,21 +2,22 @@
   "name": "Lixie",
   "description": "Allows for easy writing to Lixie Digit displays!",
   "keywords": "lixie,nixie,control,digits,display,neopixel,fastled,ws2812b,edge,lit",
-  "authors":
-  {
-    "name": "Connor Nishijima",
-    "email": "connornishijima@gmail.com"
-  },
-  "repository":
-  {
+  "authors": [
+    {
+      "name": "Connor Nishijima",
+      "email": "connornishijima@gmail.com"
+    },
+    {
+      "name": "Michael Copland",
+      "url": "https://github.com/mjbcopland"
+    }
+  ],
+  "repository": {
     "type": "git",
-    "url": "https://github.com/connornishijima/Lixie-arduino.git"
+    "url": "https://github.com/mjbcopland/Lixie.git"
   },
-  "version": "1.0.0",
+  "version": "2.0.0",
   "examples": "examples/*.ino",
   "frameworks": "arduino",
-  "platforms":
-  [
-    "atmelavr"
-  ]
+  "platforms": "atmelavr,atmelsam,freescalekinetis,nordicnrf51,nxplpc,ststm32,teensy"
 }
